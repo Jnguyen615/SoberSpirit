@@ -7,8 +7,8 @@ const MainPage = ( {drinks} ) => {
   return (
     <section className="main-page">
       <Header />
-      <h1>Welcome to SoberSprit</h1>
-      <p>A place for non drinkers to experiment with creating mocktails!</p>
+      <h3>Welcome to SoberSpirits</h3>
+      <p className='intro-text'>A place for non drinkers to experiment with creating exciting mocktails!</p>
       <Drinks drinks={drinks}/>
     </section>
   );

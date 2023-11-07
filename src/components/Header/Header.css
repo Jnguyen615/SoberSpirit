@@ -5,14 +5,14 @@
 
 h1 {
   font-family: 'Satisfy', cursive;
-  text-shadow: 3px 3px 0 #990799, 4px 4px 0 #079999, 5px 5px 0 #00ff00;
-  font-size: 1.7em;
+  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a;
+  font-size: 2.5em;
+  margin-left: -66%;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   
 }

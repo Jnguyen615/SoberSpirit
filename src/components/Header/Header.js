@@ -9,7 +9,6 @@ const Header = () => {
     <header>
       <img src={soberSpiritsLogo} className="logo" alt="logo" />
       <h1>SoberSpirits</h1>
-      <img src={soberSpiritsLogo} className="logo" alt="logo" />
       <Search />
     </header>
   )
