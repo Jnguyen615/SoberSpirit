@@ -1,13 +1,17 @@
 import soberSpiritsLogo from "../../SoberSpirits.png";
 import "./App.css";
 import LogoPage from "../LogoPage/LogoPage";
-import { BrowserRouter, Route } from "react-router-dom";
+import MainPage from '../MainPage/MainPage'
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-      <Route exact path="/" component={LogoPage} />
-      {/* <Route path="/about" component={About} /> */}
+      <Routes>
+        <Route path="/" element={<LogoPage />} />
+        <Route path="/about" element={<MainPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
