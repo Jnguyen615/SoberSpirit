@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [drinks, setDrinks] = useState([]);
-
+  const [error, setError] = useState('')
   function getNonAlcoholicDrinks() {
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
       .then((resp) => {
@@ -45,7 +45,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LogoPage />} />
-        <Route path="/main" element={<MainPage />} />
+         {drinks.length > 0 && (
+          <Route path="/main" element={<MainPage drinks={drinks} />} />
+        )}
       </Routes>
     </BrowserRouter>
   );
