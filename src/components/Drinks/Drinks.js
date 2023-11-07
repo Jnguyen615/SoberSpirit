@@ -10,6 +10,7 @@ const AllDrinkCards = ({ drinks }) => {
   const drinkCards = drinks.map(drink => {
     return (
         <DrinkCards 
+        className='single-drink-cards'
         key={drink.id}
         strDrink={drink.strDrink}
         strDrinkThumb={drink.strDrinkThumb}
@@ -19,7 +20,7 @@ const AllDrinkCards = ({ drinks }) => {
   });
 
   return (
-    <div>
+    <div className='single-drink-container'>
       {drinkCards}
     </div>
   );

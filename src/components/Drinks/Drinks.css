@@ -1,3 +1,6 @@
-.drink-cards-container {
-  background-color: #2d082e
+.single-drink-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background-color: #2d082e;
 }
