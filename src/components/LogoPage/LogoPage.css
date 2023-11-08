@@ -26,7 +26,7 @@
 .click-me {
   z-index: 1;
   background-color: #785687;
-  color: #07996b;
+  color: #bf922a;
   font-size: 1em;
   border: none;
   border-radius: 20em;
@@ -49,7 +49,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: #9867ad;
   position: absolute;
   border-radius: inherit;
   z-index: -1;

@@ -28,7 +28,7 @@ const AllDrinkCards = ({ drinks }) => {
   });
 
   return (
-    <div>
+    <div className='all-drink-cards'>
       {drinkCards}
       {selectedDrink && <DrinkCardBlowup selectedDrink={selectedDrink} />}
     </div>

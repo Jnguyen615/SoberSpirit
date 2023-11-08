@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect} from "react";
+import { useParams, useNavigate  } from "react-router-dom";
 import PropTypes from "prop-types";
+import './DrinkCardBlowup.css'
 
-const DrinkCardBlowup = ({ selectedDrink, setError }) => {
+const DrinkCardBlowup = ({  setError }) => {
   const [recipe, setRecipe] = useState({
     ingredients: [],
     measurements: [],
@@ -13,7 +14,7 @@ const DrinkCardBlowup = ({ selectedDrink, setError }) => {
     strInstructions: "",
   });
   const [loaded, setLoaded] = useState(false);
-
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const formatData = data => {
@@ -41,49 +42,56 @@ const DrinkCardBlowup = ({ selectedDrink, setError }) => {
   };
 
   useEffect(() => {
-    async function fetchDrinkDetails() {
-      try {
-        const response = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
-        }
-
-        const data = await response.json();
-        if (data.drinks && data.drinks.length > 0) {
-          setRecipe(formatData(data.drinks[0]));
-          setLoaded(true);
-        } else {
-          setError("Drink not found");
-        }
-      } catch (error) {
-        setError("Failed to fetch drink details");
-      }
-    }
-
+    const fetchDrinkDetails = () => {
+      fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (data.drinks && data.drinks.length > 0) {
+            setRecipe(formatData(data.drinks[0])); 
+            setLoaded(true);
+          } else {
+            setError('Drink not found');
+          }
+        })
+        .catch(error => {
+          setError('Failed to fetch drink details');
+        });
+    };
+  
     fetchDrinkDetails();
   }, [id, setError]);
+ 
+  const handleHomeButtonClick = () => {
+    navigate('/main')
+  }
+
 
   return (
     <div className="single-drink-page">
       {loaded ? (
-        <div>
-          <h1>{recipe.strDrink}</h1>
+        <div classname='drink-blowup'>
+          <h1 className='blowup-recipe-title'>{recipe.strDrink}</h1>
           <img
             className="drink-img"
             src={recipe.strDrinkThumb}
             alt={recipe.strDrink}
           />
           <ul>
-            {recipe.ingredients.map((ingredient, index) => (
+            Ingredients:{recipe.ingredients.map((ingredient, index) => (
               <li
                 key={index}
               >{`${recipe.measurements[index]} ${ingredient}`}</li>
             ))}
           </ul>
-          <p className="glass-type">{recipe.strGlass}</p>
-          <p>{recipe.strInstructions}</p>
+          <p className="glass-type">Glass type: {recipe.strGlass}</p>
+          <p>Instructions: <br></br>{recipe.strInstructions}</p>
+          <button onClick={
+            handleHomeButtonClick}className='home-btn'>Back to Home</button>
         </div>
       ) : (
         <div>Loading...</div>
