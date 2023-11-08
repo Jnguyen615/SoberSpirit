@@ -1,5 +1,4 @@
 import './Header.css'
-import Logo from '../Logo/Logo'
 import Search from "../Search/Search"
 import React from 'react' 
 import soberSpiritsLogo from '../../SoberSpirits.png'
