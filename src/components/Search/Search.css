@@ -1,0 +1,14 @@
+form {
+  margin-top: 2em;
+  margin-left: 1em;
+}
+
+.search-btn {
+  font-size: .5em
+}
+
+/* @media screen and (max-width: 550px) {
+  form {
+    width: 1em
+  }
+} */

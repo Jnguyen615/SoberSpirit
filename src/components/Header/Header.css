@@ -1,0 +1,18 @@
+.logo {
+  height: 5em;
+  width: 5em
+}
+
+h1 {
+  font-family: 'Satisfy', cursive;
+  text-shadow: 3px 3px 0 #990799, 4px 4px 0 #079999, 5px 5px 0 #00ff00;
+  font-size: 1.7em;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
