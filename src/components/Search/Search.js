@@ -7,6 +7,7 @@ const Search = () => {
       <input  
         type='text'
         placeholder='Search for a drink'
+        name='search'
         />
         <button className='search-btn'>🔎</button>
     </form>

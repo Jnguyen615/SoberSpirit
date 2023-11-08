@@ -3,13 +3,6 @@
   width: 10em
 }
 
-/* h1 {
-  font-family: 'Satisfy', cursive;
-  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a, 1px 1px 0 #bf922a;
-  font-size: 4em;
-  margin-left: -66%;
-} */
-
 header {
   display: flex;
   flex-direction: row;

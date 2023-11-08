@@ -10,7 +10,7 @@ const DrinkCards = ({ id,  strDrink, strDrinkThumb }) => {
   }
   return (
       <div className="single-drink-card" onClick={handleClick}>
-        <img className="drink-thumbnail" src={strDrinkThumb} alt={id} onClick={handleClick}/>
+        <img className="drink-thumbnail" src={strDrinkThumb} alt={strDrink} onClick={handleClick}/>
         <h3 className="drink-name">{strDrink}</h3>
         
     </div>

@@ -1,3 +1,8 @@
+.error-page {
+  background-color: #2d082e;
+  height: 100vh
+}
+
 h1.error-message {
   text-align: center;
   margin: auto
