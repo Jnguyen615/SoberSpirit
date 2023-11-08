@@ -74,7 +74,7 @@ const DrinkCardBlowup = ({  setError }) => {
   return (
     <div className="single-drink-page">
       {loaded ? (
-        <div classname='drink-blowup'>
+        <div className='drink-blowup'>
           <h1 className='blowup-recipe-title'>{recipe.strDrink}</h1>
           <img
             className="drink-img"
@@ -94,7 +94,7 @@ const DrinkCardBlowup = ({  setError }) => {
             handleHomeButtonClick}className='home-btn'>Back to Home</button>
         </div>
       ) : (
-        <div>Loading...</div>
+        <div className='loaing-message'>Loading...</div>
       )}
     </div>
   );

@@ -1,11 +1,7 @@
 .single-drink-page {
-  text-align: -webkit-center;
   background-color: #2d082e;
   padding-bottom: 20px; 
-}
-.blowup-recipe-title {
-  margin-bottom: 1%;
-  margin-left: 1%;
+  
 }
 
 ul {
@@ -20,7 +16,10 @@ h1 {
   font-family: 'Satisfy', cursive;
   text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a, 1px 1px 0 #bf922a;
   font-size: 4em;
+  margin: 0;
 }
+
+
 
 .drink-img {
   height: 25em;
@@ -36,9 +35,9 @@ p {
 
 .drink-blowup {
   background-color: #2d082e;
-  height: 100vh
+  min-height: 100vh;
+  margin: 0;
 }
-
 
 .home-btn {
   z-index: 1;
