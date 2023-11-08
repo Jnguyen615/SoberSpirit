@@ -10,6 +10,7 @@ ul {
   font-family: 'Alegreya', serif;
   font-size: 1.3em;
   text-align: start;
+  color: white 
 }
 
 h1 {
@@ -30,7 +31,8 @@ p {
   font-family: 'Alegreya', serif;
   font-size: 1.3em;
   text-align: start;
-  margin-left: 1%
+  margin-left: 1%;
+  color: white
 }
 
 .drink-blowup {

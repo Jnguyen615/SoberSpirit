@@ -1,13 +1,13 @@
-import React from 'react'
-import './Logo.css'
-import soberSpiritsLogo from '../../SoberSpirits.png'
+// import React from 'react'
+// import './Logo.css'
+// import soberSpiritsLogo from '../../SoberSpirits.png'
 
-const Logo = () => {
-  return (
-    <section className='logo'>
+// const Logo = () => {
+//   return (
+//     <section className='logo'>
   
-    </section>
-  )
-}
+//     </section>
+//   )
+// }
 
-export default Logo 
+// export default Logo 

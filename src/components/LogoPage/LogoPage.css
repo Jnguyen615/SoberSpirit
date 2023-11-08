@@ -2,9 +2,14 @@
   text-align: center;
 }
 
+.page-name {
+  z-index: 1;
+}
+
 .App-logo {
   height: 50vmin;
   pointer-events: none;
+  margin-top: 0%
 }
 
 @media (prefers-reduced-motion: no-preference) {
