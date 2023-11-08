@@ -14,6 +14,7 @@ const LogoPage = () => {
   return(
     <div className="logo-page">
       <header className="logo-page-header">
+      <h1 className="page-name">SoberSpirits</h1>
         <img src={soberSpiritsLogo} className="App-logo" alt="logo" />
         <button onClick={handleClickToMain}className="click-me">Click to Enter!</button>
       </header>
