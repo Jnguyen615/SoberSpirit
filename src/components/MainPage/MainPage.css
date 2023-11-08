@@ -1,0 +1,17 @@
+.main-page {
+  background-color: #2d082e
+}
+
+h3 {
+  font-family: 'Satisfy', cursive;
+  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a;
+  font-size: 3em;
+  text-align: center
+}
+
+.intro-text {
+  color: #bf922a;
+  text-align: center;
+  font-family: 'Alegreya', serif;
+  font-size: 1.5em; 
+}

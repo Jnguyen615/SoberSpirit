@@ -13,7 +13,7 @@ const LogoPage = () => {
 
   return(
     <div className="logo-page">
-      <header className="header">
+      <header className="logo-page-header">
         <img src={soberSpiritsLogo} className="App-logo" alt="logo" />
         <button onClick={handleClickToMain}className="click-me">Click to Enter!</button>
       </header>
