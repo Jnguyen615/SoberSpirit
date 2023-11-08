@@ -8,7 +8,6 @@ const Header = () => {
   return (
     <header>
       <img src={soberSpiritsLogo} className="logo" alt="logo" />
-      <h1>SoberSpirits</h1>
       <Search />
     </header>
   )
