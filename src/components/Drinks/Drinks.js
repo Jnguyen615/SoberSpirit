@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import './Drinks.css';
-import DrinkCards from '../DrinkCards/DrinkCards';
-import DrinkCardBlowup from '../DrinkCardBlowup/DrinkCardBlowup';
+import "./Drinks.css";
+import DrinkCards from "../DrinkCards/DrinkCards";
+import DrinkCardBlowup from "../DrinkCardBlowup/DrinkCardBlowup";
 
 const AllDrinkCards = ({ drinks }) => {
   const [selectedDrink, setSelectedDrink] = useState(null);
-
-  const handleDrinkClick = (drink) => {
+  const handleDrinkClick = drink => {
     setSelectedDrink(drink);
   };
 
@@ -17,7 +16,7 @@ const AllDrinkCards = ({ drinks }) => {
   const drinkCards = drinks.map((drink, index) => {
     return (
       <DrinkCards
-        className='single-drink-cards'
+        className="single-drink-cards"
         key={index}
         strDrink={drink.strDrink}
         strDrinkThumb={drink.strDrinkThumb}
@@ -28,7 +27,7 @@ const AllDrinkCards = ({ drinks }) => {
   });
 
   return (
-    <div className='all-drink-cards'>
+    <div className="all-drink-cards">
       {drinkCards}
       {selectedDrink && <DrinkCardBlowup selectedDrink={selectedDrink} />}
     </div>
