@@ -48,9 +48,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LogoPage />} />
-        {drinks.length > 0 && (
+        {/* {drinks.length > 0 && ( */}
           <Route path="/main" element={<MainPage drinks={drinks} />} />
-        )}
+        {/* ) */}
+        {/* } */}
         <Route path="*" element={<ErrorPage />} />
         {
           <Route

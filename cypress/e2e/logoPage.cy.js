@@ -28,12 +28,12 @@ describe("visit logo page", () => {
           url: "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic/*"
         },
         {
-          statusCode: 404,
+          statusCode: 500,
           body: 'Not Found'
         }
       )
     })
-    it('should show the error page', () => {
+    it('should show the error page when the page cannot be reached', () => {
       cy.visit("http://localhost:3000/*")
       cy.get('.error-page')
         .get('h1').should('contain', "Something Went Wrong")

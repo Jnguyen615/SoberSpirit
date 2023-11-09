@@ -51,6 +51,7 @@ const DrinkCardBlowup = ({  setError }) => {
           return response.json();
         })
         .then(data => {
+          console.log(data)
           if (data.drinks && data.drinks.length > 0) {
             setRecipe(formatData(data.drinks[0])); 
             setLoaded(true);
