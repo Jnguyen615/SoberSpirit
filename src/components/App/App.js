@@ -1,19 +1,15 @@
-import soberSpiritsLogo from "../../SoberSpirits.png";
 import "./App.css";
 import LogoPage from "../LogoPage/LogoPage";
 import MainPage from "../MainPage/MainPage";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import DrinkCardBlowup from "../DrinkCardBlowup/DrinkCardBlowup";
-
 import { useEffect, useState } from "react";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [drinks, setDrinks] = useState([]);
   const [error, setError] = useState("");
   const [selectedDrink, setSelectedDrink] = useState({});
-  const [selectedDrinkID, setSelectedDrinkID] = useState("");
 
   function getNonAlcoholicDrinks() {
     fetch(
@@ -28,7 +24,6 @@ function App() {
         return resp.json();
       })
       .then(data => {
-        console.log(data.drinks);
         setDrinks(data.drinks);
       })
       .catch(error => {
@@ -48,22 +43,21 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LogoPage />} />
-        {drinks.length > 0 && (
-          <Route path="/main" element={<MainPage drinks={drinks} />} />
-        )}
+        <Route
+          path="/main"
+          element={<MainPage drinks={drinks} setDrinks={setDrinks} />}
+        />
         <Route path="*" element={<ErrorPage />} />
         {
           <Route
-          path="/drink/:id"
-          element={
-            <DrinkCardBlowup
-              setSelectedDrink={setSelectedDrink}
-              selectedDrink={selectedDrink}
-              setError={setError}
-            />
-          }
-        />
-        
+            path="/drink/:id"
+            element={
+              <DrinkCardBlowup
+                setSelectedDrink={setSelectedDrink}
+                setError={setError}
+              />
+            }
+          />
         }
       </Routes>
     </BrowserRouter>

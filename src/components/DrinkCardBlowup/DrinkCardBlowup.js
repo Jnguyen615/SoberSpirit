@@ -1,9 +1,9 @@
-import React, { useState, useEffect} from "react";
-import { useParams, useNavigate  } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
-import './DrinkCardBlowup.css'
+import "./DrinkCardBlowup.css";
 
-const DrinkCardBlowup = ({  setError }) => {
+const DrinkCardBlowup = ({ setError }) => {
   const [recipe, setRecipe] = useState({
     ingredients: [],
     measurements: [],
@@ -46,55 +46,59 @@ const DrinkCardBlowup = ({  setError }) => {
       fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
         .then(response => {
           if (!response.ok) {
-            throw new Error('Failed to fetch data');
+            throw new Error("Failed to fetch data");
           }
           return response.json();
         })
         .then(data => {
           if (data.drinks && data.drinks.length > 0) {
-            setRecipe(formatData(data.drinks[0])); 
+            setRecipe(formatData(data.drinks[0]));
             setLoaded(true);
           } else {
-            setError('Drink not found');
+            setError("Drink not found");
           }
         })
         .catch(error => {
-          setError('Failed to fetch drink details');
+          setError("Failed to fetch drink details");
         });
     };
-  
+
     fetchDrinkDetails();
   }, [id, setError]);
- 
-  const handleHomeButtonClick = () => {
-    navigate('/main')
-  }
 
+  const handleHomeButtonClick = () => {
+    navigate("/main");
+  };
 
   return (
     <div className="single-drink-page">
       {loaded ? (
-        <div className='drink-blowup'>
-          <h1 className='blowup-recipe-title'>{recipe.strDrink}</h1>
+        <div className="drink-blowup">
+          <h1 className="blowup-recipe-title">{recipe.strDrink}</h1>
           <img
             className="drink-img"
             src={recipe.strDrinkThumb}
             alt={recipe.strDrink}
           />
           <ul>
-            Ingredients:{recipe.ingredients.map((ingredient, index) => (
+            Ingredients:
+            {recipe.ingredients.map((ingredient, index) => (
               <li
                 key={index}
               >{`${recipe.measurements[index]} ${ingredient}`}</li>
             ))}
           </ul>
           <p className="glass-type">Glass type: {recipe.strGlass}</p>
-          <p>Instructions: <br></br>{recipe.strInstructions}</p>
-          <button onClick={
-            handleHomeButtonClick}className='home-btn'>Back to Home</button>
+          <p>
+            Instructions: <br></br>
+            {recipe.strInstructions}
+          </p>
+          <button onClick={handleHomeButtonClick} className="home-btn">
+            Back to Home
+          </button>
         </div>
       ) : (
-        <div className='loaing-message'>Loading...</div>
+        <div className="loaing-message">Loading...</div>
       )}
     </div>
   );
