@@ -9,7 +9,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   const [drinks, setDrinks] = useState([]);
   const [error, setError] = useState("");
-  const [selectedDrink, setSelectedDrink] = useState({});
 
   function getNonAlcoholicDrinks() {
     fetch(
@@ -24,7 +23,7 @@ function App() {
         return resp.json();
       })
       .then(data => {
-        setDrinks(data.drinks);
+        setDrinks(data.drinks)
       })
       .catch(error => {
         if (error.name === "TypeError") {
@@ -47,23 +46,22 @@ function App() {
         <Route path="/" element={<LogoPage />} />
         <Route
           path="/main"
-          element={<MainPage drinks={drinks} setDrinks={setDrinks} />}
+          element={<MainPage drinks={drinks} setDrinks={setDrinks}  />}
         />
         <Route path="*" element={<ErrorPage />} />
-        {
-          <Route
-            path="/drink/:id"
-            element={
-              <DrinkCardBlowup
-                setSelectedDrink={setSelectedDrink}
-                setError={setError}
-              />
-            }
-          />
-        }
+        <Route
+          path="/drink/:id"
+          element={
+            <DrinkCardBlowup
+              drinks={drinks}
+              setError={setError}
+            />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
+  
 }
 
 export default App;

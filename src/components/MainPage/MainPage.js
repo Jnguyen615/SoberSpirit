@@ -11,7 +11,12 @@ const MainPage = ({ setDrinks, drinks }) => {
       <p className="intro-text">
         A place for non drinkers to experiment with creating exciting mocktails!
       </p>
-      <Drinks drinks={drinks} />
+      <Drinks drinks={drinks}  />
+      {drinks.length === 0 && (
+        <h2 className="no-drinks-found-message">
+          No drinks found! Try another search!
+        </h2>
+      )}
     </section>
   );
 };

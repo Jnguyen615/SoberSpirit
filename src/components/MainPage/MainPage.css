@@ -17,3 +17,10 @@ h3 {
   font-family: 'Alegreya', serif;
   font-size: 1.5em; 
 }
+
+.no-drinks-found-message {
+  font-family: 'Satisfy', cursive;
+  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a;
+  font-size: 2.5em;
+  text-align: center;
+}
