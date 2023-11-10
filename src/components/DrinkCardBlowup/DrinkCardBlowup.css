@@ -17,7 +17,7 @@ h1 {
   font-family: 'Satisfy', cursive;
   text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a, 1px 1px 0 #bf922a;
   font-size: 4em;
-  margin: 0;
+  margin-left: 2%
 }
 
 
@@ -25,6 +25,7 @@ h1 {
 .drink-img {
   height: 25em;
   box-shadow: 5px 5px 10px #bf922a, -5px -5px 10px #bf922a;
+  margin-left: 2%
 }
 
 p {

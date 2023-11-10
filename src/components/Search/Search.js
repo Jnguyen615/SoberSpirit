@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Search.css";
 
 const Search = ({ setDrinks, drinks }) => {
@@ -21,6 +21,19 @@ const Search = ({ setDrinks, drinks }) => {
     }
   };
 
+  const handleInputChange = event => {
+    const value = event.target.value.toLowerCase();
+    setSearchInput(value);
+    const filteredDrinks = drinks.filter(drink =>
+      drink.strDrink.toLowerCase().includes(value),
+    );
+    setDrinks(filteredDrinks);
+
+    if (value === '') {
+      setDrinks(drinks);
+    }
+  };
+
   return (
     <form onSubmit={handleSearch}>
       <input
@@ -28,7 +41,7 @@ const Search = ({ setDrinks, drinks }) => {
         placeholder="Search for a drink"
         name="search"
         value={searchInput}
-        onChange={e => setSearchInput(e.target.value)}
+        onChange={handleInputChange}
       />
       <button className="search-btn" type="submit">
         🔎

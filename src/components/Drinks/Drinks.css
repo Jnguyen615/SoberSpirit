@@ -2,5 +2,68 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  background-color: #2d082e
+  background-color: #2d082e;
+  margin-left: 2%
+}
+
+.no-drinks-message {
+  font-family: 'Satisfy', cursive;
+  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a;
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.return-to-home-btn {
+  z-index: 1;
+  background-color: #785687;
+  color: #bf922a;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 20em;
+  user-select: none;
+  width: 29vw;
+  height: 5vh;
+  transition: all 100ms linear;
+  font-family: 'Cormorant Garamond', serif;
+  box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
+  0 2px 4px -2px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  margin-left: 35%;
+  margin-top: 5%
+}
+ 
+.return-to-home-btn:active {
+  box-shadow: inset 0 0 0 4px #043b3f6b;
+}
+
+.return-to-home-btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #9867ad;
+  position: absolute;
+  border-radius: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease-in-out;
+  opacity: 0;
+  animation: flash 100ms ease-in-out;
+  transform: scaleX(2) scaleY(2);
+}
+
+.return-to-home-btn:hover::before {
+  opacity: 1;
+  transform: scaleX(1) scaleY(1);
+}
+
+@keyframes flash {
+  0%{
+      opacity: 1;
+      transform: translate(45px);
+  }
+  100%{
+      opacity: 0;
+      transform: translate(0);
+  }
 }

@@ -12,5 +12,6 @@ describe('display main page' , () => {
     .get('.single-drink-card').last().contains('h3', 'Yoghurt Cooler')
     .get('.single-drink-card').last().find('img[alt="Yoghurt Cooler"]')
     .get('.all-drink-cards').children().should('have.length', '58')
+    .get('.single-drink-card').first().click()
   })
 })
