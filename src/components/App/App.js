@@ -39,6 +39,8 @@ function App() {
     getNonAlcoholicDrinks();
   }, []);
 
+  
+
   return (
     <BrowserRouter>
       <Routes>

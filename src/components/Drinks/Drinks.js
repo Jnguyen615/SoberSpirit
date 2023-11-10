@@ -10,7 +10,13 @@ const AllDrinkCards = ({ drinks }) => {
   };
 
   if (!drinks || drinks.length === 0) {
-    return <div>No drinks available</div>;
+    return ( 
+      <div className='no-drinks-page'>
+      <div className='no-drinks-message'>No drinks available!</div>
+      <button className="return-to-home-btn">Return to Home</button>
+
+      </div>
+      )
   }
 
   const drinkCards = drinks.map((drink, index) => {
