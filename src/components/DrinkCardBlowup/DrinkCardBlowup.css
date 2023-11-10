@@ -9,7 +9,6 @@ ul {
   text-align: center;
   font-family: 'Alegreya', serif;
   font-size: 1.3em;
-  text-align: start;
   color: white 
 }
 
@@ -17,7 +16,7 @@ h1 {
   font-family: 'Satisfy', cursive;
   text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a, 1px 1px 0 #bf922a;
   font-size: 4em;
-  margin-left: 2%
+  margin-top: 0%
 }
 
 
@@ -25,14 +24,12 @@ h1 {
 .drink-img {
   height: 25em;
   box-shadow: 5px 5px 10px #bf922a, -5px -5px 10px #bf922a;
-  margin-left: 2%
 }
 
 p {
   font-family: 'Alegreya', serif;
   font-size: 1.3em;
   text-align: start;
-  margin-left: 1%;
   color: white
 }
 
@@ -40,6 +37,9 @@ p {
   background-color: #2d082e;
   min-height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-btn {
