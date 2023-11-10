@@ -3,23 +3,16 @@ import "./Drinks.css";
 import DrinkCards from "../DrinkCards/DrinkCards";
 import DrinkCardBlowup from "../DrinkCardBlowup/DrinkCardBlowup";
 
+
 const AllDrinkCards = ({ drinks }) => {
   const [selectedDrink, setSelectedDrink] = useState(null);
   const handleDrinkClick = drink => {
     setSelectedDrink(drink);
   };
 
-  if (!drinks || drinks.length === 0) {
-    return ( 
-      <div className='no-drinks-page'>
-      <div className='no-drinks-message'>No drinks available!</div>
-      <button className="return-to-home-btn">Return to Home</button>
-
-      </div>
-      )
-  }
-
+  
   const drinkCards = drinks.map((drink, index) => {
+
     return (
       <DrinkCards
         className="single-drink-cards"

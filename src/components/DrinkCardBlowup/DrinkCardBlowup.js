@@ -98,7 +98,7 @@ const DrinkCardBlowup = ({ setError }) => {
           </button>
         </div>
       ) : (
-        <div className="loaing-message">Loading...</div>
+        <div className="loading-message">Loading...</div>
       )}
     </div>
   );
