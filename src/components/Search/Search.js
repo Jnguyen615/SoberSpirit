@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Search.css'
+import PropTypes from 'prop-types'
 
 const Search = ({ setDrinks, drinks }) => {
   const [searchInput, setSearchInput] = useState("");
@@ -80,10 +81,6 @@ const Search = ({ setDrinks, drinks }) => {
           value={searchInput}
           onChange={handleInputChange}
         />
-        {/* <button className="search-btn" type="submit">
-          🔎
-        </button> */}
-        {error && <p>{error}</p>}
       </form>
       <button className="all-drinks" onClick={setAllDrinks}>
         All Drinks
@@ -93,3 +90,8 @@ const Search = ({ setDrinks, drinks }) => {
 };
 
 export default Search;
+
+Search.propTypes = {
+  setDrinks: PropTypes.func.isRequired,
+  drinks: PropTypes.arrayOf(PropTypes.object).isRequired
+}
