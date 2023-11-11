@@ -2,6 +2,7 @@ import "./MainPage.css";
 import Header from "../Header/Header";
 import React from "react";
 import Drinks from "../Drinks/Drinks";
+import PropTypes from 'prop-types'
 
 const MainPage = ({ setDrinks, drinks }) => {
   return (
@@ -22,3 +23,8 @@ const MainPage = ({ setDrinks, drinks }) => {
 };
 
 export default MainPage;
+
+MainPage.propTypes = {
+  setDrinks: PropTypes.func.isRequired,
+  drinks: PropTypes.arrayOf(PropTypes.object).isRequired
+}

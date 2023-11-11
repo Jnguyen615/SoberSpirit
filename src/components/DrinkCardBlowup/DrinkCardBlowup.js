@@ -104,5 +104,8 @@ const DrinkCardBlowup = ({ setError }) => {
   );
 };
 
-//proptyopes
 export default DrinkCardBlowup;
+
+DrinkCardBlowup.propTypes = {
+  setError: PropTypes.func.isRequired
+}

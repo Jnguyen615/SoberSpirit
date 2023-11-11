@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Drinks.css";
 import DrinkCards from "../DrinkCards/DrinkCards";
 import DrinkCardBlowup from "../DrinkCardBlowup/DrinkCardBlowup";
-
+import PropTypes from "prop-types";
 
 const AllDrinkCards = ({ drinks }) => {
   const [selectedDrink, setSelectedDrink] = useState(null);
@@ -10,9 +10,7 @@ const AllDrinkCards = ({ drinks }) => {
     setSelectedDrink(drink);
   };
 
-  
   const drinkCards = drinks.map((drink, index) => {
-
     return (
       <DrinkCards
         className="single-drink-cards"
@@ -34,3 +32,12 @@ const AllDrinkCards = ({ drinks }) => {
 };
 
 export default AllDrinkCards;
+
+AllDrinkCards.propType = {
+    drinks: PropTypes.arrayOf(PropTypes.object).isRequired,
+    drink: PropTypes.shape({  
+    idDrink: PropTypes.string.isRequired,
+    strDrink: PropTypes.string.isRequired,
+    strDrinkThumb: PropTypes.string.isRequired,
+  }).isRequired
+};
