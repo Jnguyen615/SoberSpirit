@@ -4,11 +4,18 @@
   width: 100vw;
 }
 
+h2 {
+  color: burlywood;
+  text-align: center;
+}
+
 h3 {
   font-family: "Satisfy", cursive;
-  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a;
+  text-shadow: 2px 2px 0 #785687;
   font-size: 4em;
   text-align: center;
+  color: burlywood;
+  z-index: 2;
 }
 
 .intro-text {

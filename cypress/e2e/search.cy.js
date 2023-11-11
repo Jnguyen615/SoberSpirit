@@ -23,7 +23,12 @@ describe("display main page", () => {
         "contain",
         "A place for non drinkers to experiment with creating exciting mocktails!",
       )
-      .get("form")
+      
+  });
+
+  it('should search for a drink and find none', () => {
+    cy.visit("http://localhost:3000/main")
+    .get("form")
       .get('input[name="search"]')
       .should("have.attr", "placeholder", "Search for a drink")
       .get('input[name="search"]')
@@ -31,5 +36,6 @@ describe("display main page", () => {
       .get("h2")
       .should('contain', 'No drinks found! Try another search')
       .get(".all-drinks").type('button').click()
-  });
+
+  })
 });

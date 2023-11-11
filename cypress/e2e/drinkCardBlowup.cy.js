@@ -14,7 +14,7 @@ describe("When a user visits the homepage, they can click on a drink card and se
 
     it("should show the drink card blowup", () => {
       cy.visit("http://localhost:3000/drink/12560")
-        .get(".logo")
+        .get(".app-logo")
         .should("exist")
         .url()
         .should("eq", "http://localhost:3000/drink/12560")

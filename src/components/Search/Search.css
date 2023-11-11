@@ -3,12 +3,12 @@ form {
   margin-left: 1em;
 }
 
-input {
-  width: 95%;
-  padding: 0
-}
 .search-btn {
   font-size: .7em
+}
+
+input {
+  width: 95%
 }
 
 .all-drinks {
