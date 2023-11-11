@@ -17,9 +17,7 @@ describe("visit logo page", () => {
         .contains("SoberSpirits")
         .get("header")
         .should("be.visible")
-        .get(
-          'href="http://localhost:3000/static/media/SoberSpirits.51ff7aba6ebf94841702.png"]',
-        )
+        .get('img[alt="logo"]')
         .should("be.visible")
         .get(".click-me")
         .should("be.visible")
@@ -29,3 +27,5 @@ describe("visit logo page", () => {
     });
   });
 });
+
+
