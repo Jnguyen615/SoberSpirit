@@ -1,4 +1,17 @@
 describe("display main page", () => {
+  beforeEach(() => {
+    cy.intercept(
+      "GET",
+      "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic",
+      {
+        statusCode: 201,
+        fixtures: "nonAlcoholicDrinkdata",
+      },
+    ).as("MainPage");
+    cy.visit("http://localhost:3000/");
+    cy.wait("@MainPage");
+  });
+  
   it("should show main page", () => {
     cy.visit("http://localhost:3000/main")
       .get('img[alt="logo"]')
@@ -14,24 +27,9 @@ describe("display main page", () => {
       .get('input[name="search"]')
       .should("have.attr", "placeholder", "Search for a drink")
       .get('input[name="search"]')
-      .get('input[placeholder="Search for a drink"]')
-      .get(".single-drink-card")
-      .first()
-      .contains("h3", "Afterglow")
-      .get(".single-drink-card")
-      .first()
-      .find('img[alt="Afterglow"]')
-      .get(".single-drink-card")
-      .last()
-      .contains("h3", "Yoghurt Cooler")
-      .get(".single-drink-card")
-      .last()
-      .find('img[alt="Yoghurt Cooler"]')
-      .get(".all-drink-cards")
-      .children()
-      .should("have.length", "58")
-      .get(".single-drink-card")
-      .first()
-      .click();
+      .type("beer")
+      .get("h2")
+      .should('contain', 'No drinks found! Try another search')
+      .get(".all-drinks").type('button').click()
   });
 });
