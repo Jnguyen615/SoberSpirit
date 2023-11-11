@@ -4,24 +4,40 @@
   
 }
 
+
+.app-logo {
+  height: 9em;
+  width: 9em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
 ul {
   list-style-type: none;
   text-align: center;
   font-family: 'Alegreya', serif;
   font-size: 1.3em;
   color: white ;
-  margin-right: 5%
+  margin-right: 5%;
+  color: burlywood;
 }
 
 h1 {
   font-family: 'Satisfy', cursive;
-  text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a, 1px 1px 0 #bf922a;
+  text-shadow: 2px 2px 0 #785687;
   font-size: 4em;
-  margin-top: 0%
+  margin-top: 0%;
+  color: burlywood;
+  z-index: 1
 }
 
 .drink-img {
-  height: 25em;
+  height: 20em;
   box-shadow: 5px 5px 10px #bf922a, -5px -5px 10px #bf922a;
 }
 
@@ -29,7 +45,8 @@ p {
   font-family: 'Alegreya', serif;
   font-size: 1.3em;
   text-align: start;
-  color: white
+  color: burlywood;
+  margin-left: 2%
 }
 
 .drink-blowup {
@@ -85,8 +102,22 @@ p {
   font-family: 'Satisfy', cursive;
   text-shadow: 2px 2px 0 #785687, 1px 1px 0 #bf922a, 1px 1px 0 #bf922a;
   font-size: 2em;
-  margin-top: 0%
+  text-align: center;
+  margin-top: 0%;
+  color: burlywood;
+  background-color: 2d082e;
+  height: 100vh;
 }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes flash {
   0%{
       opacity: 1;
@@ -136,6 +167,11 @@ p {
  @media screen and (max-width: 375px) {
   h1 {
     font-size: 2em;
+  }
+
+  .app-logo {
+    height: 5em;
+    width: 5em
   }
 
   .drink-img {

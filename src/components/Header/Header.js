@@ -2,13 +2,12 @@ import "./Header.css";
 import Search from "../Search/Search";
 import React from "react";
 import PropTypes from 'prop-types'
-
 import soberSpiritsLogo from "../../SoberSpirits.png";
 
 const Header = ({ setDrinks, drinks }) => {
   return (
     <header>
-      <img src={soberSpiritsLogo} className="logo" alt="logo" />
+      <img src={soberSpiritsLogo} className="app-logo" alt="logo" />
       <Search
         setDrinks={setDrinks}
         drinks={drinks}
