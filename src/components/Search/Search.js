@@ -80,9 +80,9 @@ const Search = ({ setDrinks, drinks }) => {
           value={searchInput}
           onChange={handleInputChange}
         />
-        <button className="search-btn" type="submit">
+        {/* <button className="search-btn" type="submit">
           🔎
-        </button>
+        </button> */}
         {error && <p>{error}</p>}
       </form>
       <button className="all-drinks" onClick={setAllDrinks}>
