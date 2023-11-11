@@ -91,8 +91,13 @@
   }
 }
 
-@media screen and (max-width: 200px) {
+@media screen and (max-width: 375px) {
   .click-me {
     font-size: 10px
+  }
+  .App-logo {
+    height: 5%;
+    pointer-events: none;
+    margin-top: 0%
   }
 }

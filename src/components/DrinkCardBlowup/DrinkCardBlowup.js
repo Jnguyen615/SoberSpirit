@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./DrinkCardBlowup.css";
+import Logo from '../Logo/Logo'
 
 const DrinkCardBlowup = ({ setError }) => {
   const [recipe, setRecipe] = useState({
@@ -72,6 +73,7 @@ const DrinkCardBlowup = ({ setError }) => {
 
   return (
     <div className="single-drink-page">
+      <Logo />
       {loaded ? (
         <div className="drink-blowup">
           <h1 className="blowup-recipe-title">{recipe.strDrink}</h1>

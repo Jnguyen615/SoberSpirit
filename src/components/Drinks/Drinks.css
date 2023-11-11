@@ -67,3 +67,17 @@
       transform: translate(0);
   }
 }
+
+@media screen and (max-width: 900px) {
+  .all-drink-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    background-color: #2d082e;
+    margin-left: 12%
+  }
+}
+
+/* @media scr4een and (max-width: 375px) {
+
+} */

@@ -9,3 +9,10 @@ header {
   justify-content: space-between;
   height: 50px
 }
+
+@media screen and (max-width:900px) {
+  .logo {
+    height: 8em;
+    width: 8em
+  }
+}
